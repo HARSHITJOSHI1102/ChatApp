@@ -5,9 +5,16 @@ import SignupPage from "./pages/SignUpPage";
 import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
 import LoginPage from "./pages/LoginPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useAuthStore } from "./store/useAuthStore";
-// import { axiosInstance } from "./lib/axios";
+import "./index.css"; // or the correct path to your global CSS file
+
 import { Loader } from "lucide-react";
 const App = () => {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
@@ -45,6 +52,7 @@ const App = () => {
           element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
         />
       </Routes>
+      <Toaster />
     </Router>
   );
 };
