@@ -2,15 +2,11 @@ import daisyui from "daisyui";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // ✅ Ensures Tailwind scans all component files
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },
-  safelist: [{ pattern: /./ }],
-  plugins: [daisyui], // ✅ Ensure DaisyUI is loaded
+  plugins: [daisyui],
   daisyui: {
     themes: [
       "light",
